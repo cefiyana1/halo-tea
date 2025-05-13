@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@teaxyz/cli": "^0.39.6"
+  }
+}
