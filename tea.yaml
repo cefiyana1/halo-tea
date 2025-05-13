@@ -1,3 +1,8 @@
+name: halo-tea
+description: A demonstration project for Tea Protocol using colorama.
 maintainer: Cefiyana1
-contributors: []
+github_url: https://github.com/cefiyana1/halo-tea
+version: 1.0
+dependencies:
+  - colorama
 quorum: 1
