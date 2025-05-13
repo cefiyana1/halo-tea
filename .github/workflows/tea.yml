@@ -13,13 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Install tea
         run: |
           curl -fsSL https://install.tea.xyz | sh
-
-      - name: Add tea to PATH
-        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
-
+      - name: Add Tea to PATH
+        run: |
+          echo "export PATH=$HOME/.tea/bin:$PATH" >> $GITHUB_ENV
+      - name: Verify Tea installation
+        run: |
+          echo "Tea installation directory:"
+          ls -la $HOME/.tea/bin
       - name: Run tea check
         run: tea check
