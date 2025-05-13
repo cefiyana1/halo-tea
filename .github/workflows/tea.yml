@@ -16,6 +16,7 @@ jobs:
       - name: Set up Tea
         run: |
           curl -fsSL https://install.tea.xyz | sh
+          echo "$HOME/.tea/bin" >> $GITHUB_PATH  # Menambahkannya ke PATH
       - name: Run tea check
         run: |
-          ~/.tea/bin/tea check
+          tea check  # Perintah yang dapat dijalankan setelah PATH sudah benar
