@@ -1,0 +1,21 @@
+name: Tea Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-tea:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Tea
+        run: |
+          curl -fsSL https://install.tea.xyz | sh
+      - name: Run tea check
+        run: |
+          ~/.tea/bin/tea check
