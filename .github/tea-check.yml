@@ -1,0 +1,32 @@
+name: Tea Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-tea:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Tea
+        run: |
+          curl -fsSL https://install.tea.xyz | bash
+          echo "Finished running install script"
+          echo "PATH before: $PATH"
+          echo "$HOME/.local/share/tea/bin" >> $GITHUB_PATH
+
+      - name: Debug tea path
+        run: |
+          echo "Trying to list Tea path"
+          ls -la $HOME/.local/share/tea/bin || echo "Tea bin not found"
+          echo "PATH is: $PATH"
+
+      - name: Run tea check
+        run: |
+          tea check
