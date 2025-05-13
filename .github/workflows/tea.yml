@@ -17,12 +17,15 @@ jobs:
       - name: Install Tea
         run: |
           curl -fsSL https://install.tea.xyz | bash
-          echo "$HOME/.tea/bin" >> $GITHUB_PATH
+          echo "Finished running install script"
+          echo "PATH before: $PATH"
+          echo "$HOME/.local/share/tea/bin" >> $GITHUB_PATH
 
-      - name: Verify Tea Installation
+      - name: Debug tea path
         run: |
-          ls -la $HOME/.tea/bin
-          tea --version
+          echo "Trying to list Tea path"
+          ls -la $HOME/.local/share/tea/bin || echo "Tea bin not found"
+          echo "PATH is: $PATH"
 
       - name: Run tea check
         run: |
