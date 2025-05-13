@@ -14,19 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install Tea
+      - name: Install tea
         run: |
-          curl -fsSL https://install.tea.xyz | bash
-          echo "Finished running install script"
-          echo "PATH before: $PATH"
-          echo "$HOME/.local/share/tea/bin" >> $GITHUB_PATH
+          curl -fsSL https://install.tea.xyz | sh
 
-      - name: Debug tea path
-        run: |
-          echo "Trying to list Tea path"
-          ls -la $HOME/.local/share/tea/bin || echo "Tea bin not found"
-          echo "PATH is: $PATH"
+      - name: Add tea to PATH
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Run tea check
-        run: |
-          tea check
+        run: tea check
