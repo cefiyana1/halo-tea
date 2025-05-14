@@ -12,7 +12,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'halo-tea=halo_tea.main:main'
+            'halo-tea=halo_tea.main:say_hello'
         ]
     },
     classifiers=[
