@@ -7,8 +7,8 @@ setup(
     description='Package Python dari proyek halo-tea',
     packages=find_packages(),
     install_requires=[
-        'requests',
-        'colorama'
+        'colorama',
+        'requests'
     ],
     entry_points={
         'console_scripts': [
