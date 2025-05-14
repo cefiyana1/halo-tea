@@ -7,11 +7,12 @@ setup(
     description='Package Python dari proyek halo-tea',
     packages=find_packages(),
     install_requires=[
-        'requests'
+        'requests',
+        'colorama'
     ],
     entry_points={
         'console_scripts': [
-            'halo-tea=main:main'
+            'halo-tea=halo_tea.main:main'
         ]
     },
     classifiers=[
