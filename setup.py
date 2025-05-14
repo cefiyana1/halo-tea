@@ -3,15 +3,13 @@ from setuptools import setup, find_packages
 setup(
     name="halo-tea",
     version="0.1",
-    author="cefiyana1",
-    description="Package Python dari proyek halo-tea",
     packages=find_packages(),
     install_requires=[
-        "colorama",
+        "colorama"
     ],
     entry_points={
-        "console_scripts": [
-            "halo-tea = halo_tea.main:say_hello",
+        'console_scripts': [
+            'halo-tea = halo_tea.main:say_hello'
         ],
     },
     classifiers=[
