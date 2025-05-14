@@ -1,5 +1,5 @@
 from colorama import Fore, init
 
-def main():
+def say_hello():
     init()
     print(Fore.GREEN + "Halo dari halo-tea!")
